@@ -25,7 +25,7 @@ And to start up a docker instance of RabbitMQ, with the command:
 
 `$ sudo docker run -p 9000:15672 -p 1883:1883 -p 5672:5672 cyrilix/rabbitmq-mqtt`
 
-MQTIZER is a mobile MQTT client that can connect to any broker which shares the network with your phone, and to any broker on the cloud as well To show Message on Mobile App download Mobile App MQTIZER than Add the Broker on the app having same Ip as RabbitMQ. Now you will be able to see messages on Mobile Application and for the Web APP Download the Google Chrome extension called "MQTT Lens" add the host ip , username and password subscribe to it then it will show the notifications of the CO2 AND VOC values
+MQTIZER is a mobile MQTT client that can connect to any broker which shares the network with your phone, and to any broker on the cloud as well To show Message on Mobile App download Mobile App MQTIZER than Add the Broker on the app having same Ip as RabbitMQ. Now you will be able to see messages on Mobile Application and for the Web APP Download the Google Chrome extension called "MQTT LENS" add the host ip , username and password subscribe to it then it will show the notifications of the CO2 AND VOC values
 
 ### [](https://github.com/Sarmad302/-Smoke-Detection-Serverless-Computing/blob/main/README.md#technologies-used)Technologies used
 
@@ -46,5 +46,5 @@ The ESP8266WiFi library provides a wide collection of C++ methods (functions) an
 
 A client library for MQTT messaging. MQTT is a lightweight messaging protocol ideal for small devices. This library allows you to send and receive MQTT messages
 
-CCS811 Sensor Library 
+[CCS811 Sensor Library ]
 This is an Arduino library. It implements a driver for the CCS811. This chip is a indoor air quality sensor module with an I2C interface.
