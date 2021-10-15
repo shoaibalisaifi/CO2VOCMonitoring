@@ -4,7 +4,7 @@ the best way to address the previously mentioned problem is to detect and monito
 
 CO2VOCMonitoring is a simple function made for  [Nuclio](https://nuclio.io/), an open source and managed serverless platform that we can run on our home server. It uses  [RabbitMQ](https://www.rabbitmq.com/)  as broker to share MQTT messages around. It also consist of Mobile Application  [MQTIZER](https://play.google.com/store/apps/details?id=com.sanyamarya.mqtizermqtt_client&hl=en&gl=US)  to check Mqtt messages on Mobile Application for the Web based application we install [MQTTLENS](https://chrome.google.com/webstore/detail/mqttlens/hemojaaeigabkbcookmlgmdigohjobjm)   the CO2 and VOC values can now be viewed  on web app as well.
 
-This is project for the Serverless Computing class at  [Università degli Studi di Salerno](https://www.unisa.it/), I used Nuclio to simulate a fully fledged serverless infrastructure.
+
 
 Prerequisite
 
@@ -15,13 +15,13 @@ Prerequisite
 -   MQTIZER
 - MQTTLENS
 
-How to use it
+Instructions
 
-First of all, clone this repository, then you need to start a Docker to start up a docker instance of Nuclio, with the command:
+ Clone this repository, then you need to start a Docker to start up a docker instance of Nuclio, use this command on nuclio:
 
 `$ sudo docker run -p 8070:8070 -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp nuclio/dashboard:stable-amd64`
 
-And to start up a docker instance of RabbitMQ, with the command:
+And to start up a docker instance of RabbitMQ, use the following command:
 
 `$ sudo docker run -p 9000:15672 -p 1883:1883 -p 5672:5672 cyrilix/rabbitmq-mqtt`
 
