@@ -1,0 +1,31 @@
+metadata:
+  name: co2vocmonitoring
+  labels:
+    nuclio.io/project-name: 5fd9dc6b-4fff-4518-835f-71057d710da2
+spec:
+  handler: "main:handler"
+  runtime: nodejs
+  resources: {}
+  image: "nuclio/processor-co2vocmonitoring:latest"
+  minReplicas: 1
+  maxReplicas: 1
+  targetCPU: 75
+  triggers:
+    co2trigger:
+      class: ""
+      kind: mqtt
+      url: "guest:guest@192.168.1.163:1883"
+      attributes:
+        subscriptions:
+          - qos: 0
+            topic: iot/sensors/co2
+  version: 1
+  build:
+    functionSourceCode: dmFyIGFtcSA9IHJlcXVpcmUoJ2FtcXBsaWInKTsNCg0KDQogICAgICAgIGFzeW5jIGZ1bmN0aW9uIGxvZ3MobWVzc2FnZSl7DQogICAgICAgICAgICB2YXIgcmFiYml0bXFxdWV1ZSA9ICdjbzJ2b2MnOw0KICAgICAgICAgICAgY29uc3QgY29ubmVjdGlvbiA9IGF3YWl0IGFtcS5jb25uZWN0KCdhbXFwOi8vZ3Vlc3Q6Z3Vlc3RAMTkyLjE2OC4xLjE2Mzo1NjcyJyk7DQogICAgICAgICAgICBjb25zdCBjaGFubmVsID0gYXdhaXQgY29ubmVjdGlvbi5jcmVhdGVDaGFubmVsKCk7DQogICAgICAgICAgICBhd2FpdCBjaGFubmVsLmFzc2VydFF1ZXVlKHJhYmJpdG1xcXVldWUsIHtkdXJhYmxlOiBmYWxzZX0pOw0KICAgICAgICAgICAgY2hhbm5lbC5zZW5kVG9RdWV1ZShyYWJiaXRtcXF1ZXVlLCBCdWZmZXIuZnJvbShtZXNzYWdlKSk7DQogICAgICAgICB9DQoNCiAgICAgICAgICAgIA0KDQogICAgICAgIGV4cG9ydHMuaGFuZGxlciA9IGZ1bmN0aW9uKGNvbnRleHQsIF9vY2N1cmVuY2UpIHsNCiAgICAgICAgICAgIHZhciBfb2NjdXJlbmNlID0gSlNPTi5wYXJzZShKU09OLnN0cmluZ2lmeShfb2NjdXJlbmNlKSk7DQogICAgICAgICAgICB2YXIgX2luZm8gPSBTdHJpbmcuZnJvbUNoYXJDb2RlKC4uLl9vY2N1cmVuY2UuYm9keS5kYXRhKTsNCg0KICAgICAgICAgICAgY29udGV4dC5jYWxsYmFjaygicmVzcG9uc2UgIitfaW5mbyk7DQogICAgICAgICAgICBsb2dzKCJkZXRhaWxzICIrX2luZm8pOw0KICAgICAgICAgICAgDQogICAgICAgICAgICB9DQogICAgICAgIA==
+    commands:
+      - 'npm install amqplib'
+    runtimeAttributes:
+      repositories: []
+    codeEntryType: sourceCode
+  platform: {}
+  readinessTimeoutSeconds: 60
